@@ -1,8 +1,8 @@
 // connect to database
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { Sequelize } = require('sequelize');
+const { Sequelize } = require("sequelize");
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 dotenv.config();
 
 const sequelize = new Sequelize(
@@ -12,8 +12,8 @@ const sequelize = new Sequelize(
   {
     // host: '192.168.0.11',
     // host: '192.168.0.115',
-    host: 'sql6.freesqldatabase.com',
-    dialect: 'mysql',
+    host: "sql6.freesqldatabase.com",
+    dialect: "mysql",
     pool: { max: 5, min: 0, idle: 10000 },
     logging: false,
     // dialectOptions: {
@@ -26,23 +26,23 @@ const sequelize = new Sequelize(
     //     return next()
     //   },
     // },
-    timezone: '+06:00',
+    timezone: "+06:00",
     port: 3306,
     //    host: "localhost",
     //   dialect: "mysql",
     //   pool: { max: 5, min: 0, idle: 10000 },
     //   logging: false,
     //   timezone: "+06:00",
-  },
+  }
 );
 
 sequelize
   .authenticate()
   .then(() => {
-    ('Database connected successfully');
+    ("Database connected successfully");
   })
   .catch((error) => {
-    ('Error:', error.message);
+    "Error:", error.message;
   });
 
 const db = {};
