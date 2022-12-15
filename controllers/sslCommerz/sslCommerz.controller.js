@@ -17,12 +17,12 @@ const sequelize = db.sequelize;
 //     total_amount: amount,
 //     currency: 'BDT',
 //     tran_id: TranId,
-//     // success_url: `http://localhost:4000/api/v1/sslcommerz/ssl-payment-success?transactionId=${TranId}`,
-//     // fail_url: `http://localhost:4000/api/v1/sslcommerz/ssl-payment-fail?transactionId=${TranId}`,
-//     // cancel_url: `http://localhost:4000/api/v1/sslcommerz/ssl-payment-cancel?transactionId=${TranId}`,
-//     success_url: 'http://localhost:4000/api/v1/sslcommerz/ssl-payment-success',
-//     fail_url: 'http://localhost:4000/api/v1/sslcommerz/ssl-payment-fail',
-//     cancel_url: 'http://localhost:4000/api/v1/sslcommerz/ssl-payment-cancel',
+//     // success_url: `https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-success?transactionId=${TranId}`,
+//     // fail_url: `https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-fail?transactionId=${TranId}`,
+//     // cancel_url: `https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-cancel?transactionId=${TranId}`,
+//     success_url: 'https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-success',
+//     fail_url: 'https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-fail',
+//     cancel_url: 'https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-cancel',
 //     shipping_method: 'No',
 //     product_name: 'device_number.',
 //     product_category: 'Electronic',
@@ -42,8 +42,8 @@ const sequelize = db.sequelize;
 //     value_b: 'ref002_B',
 //     value_c: 'ref003_C',
 //     value_d: 'ref004_D',
-//     // ipn_url: `http://localhost:4000/api/v1/sslcommerz/ssl-payment-notification?transactionId=${TranId}`,
-//     ipn_url: 'http://localhost:4000/api/v1/sslcommerz/ssl-payment-notification',
+//     // ipn_url: `https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-notification?transactionId=${TranId}`,
+//     ipn_url: 'https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-notification',
 //   };
 
 //   const sslcommerz = new SSLCommerzPayment(
@@ -71,9 +71,9 @@ module.exports.sslrequestInsert = async (req, res) => {
     card_number: card_no,
     currency: "BDT",
     tran_id: transactionId,
-    success_url: `http://localhost:4000/api/v1/sslcommerz/ssl-payment-success?transactionId=${transactionId}`,
-    fail_url: `http://localhost:4000/api/v1/sslcommerz/ssl-payment-fail?transactionId=${transactionId}`,
-    cancel_url: `http://localhost:4000/api/v1/sslcommerz/ssl-payment-cancel?transactionId=${transactionId}`,
+    success_url: `https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-success?transactionId=${transactionId}`,
+    fail_url: `https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-fail?transactionId=${transactionId}`,
+    cancel_url: `https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-cancel?transactionId=${transactionId}`,
     shipping_method: "No",
     product_name: "device_number.",
     product_category: "Electronic",
@@ -93,7 +93,8 @@ module.exports.sslrequestInsert = async (req, res) => {
     value_b: "ref002_B",
     // value_c: 'ref003_C',
     value_d: "ref004_D",
-    ipn_url: "http://localhost:4000/api/v1/sslcommerz/ssl-payment-notification",
+    ipn_url:
+      "https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-notification",
   };
   // const sslcommerz = new SSLCommerzPayment(
   //   process.env.STORE_ID,
@@ -285,7 +286,7 @@ module.exports.sslpaymentsuccessInsert = async (req, res) => {
   // rechare de construsiton from ssl success
 
   res.redirect(
-    `https://aesthetic-sorbet-7021e2.netlify.app/success/${transactionId}/${card_number_local}`
+    `https://aesthetic-sorbet-7021e2.netlify.app/${transactionId}/${card_number_local}`
   );
 };
 
