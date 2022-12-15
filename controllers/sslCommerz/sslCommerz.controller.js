@@ -93,8 +93,7 @@ module.exports.sslrequestInsert = async (req, res) => {
     value_b: "ref002_B",
     // value_c: 'ref003_C',
     value_d: "ref004_D",
-    ipn_url:
-      "https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-notification",
+    ipn_url: "https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-notification",
   };
   // const sslcommerz = new SSLCommerzPayment(
   //   process.env.STORE_ID,
@@ -286,7 +285,7 @@ module.exports.sslpaymentsuccessInsert = async (req, res) => {
   // rechare de construsiton from ssl success
 
   res.redirect(
-    `https://aesthetic-sorbet-7021e2.netlify.app/${transactionId}/${card_number_local}`
+    `https://aesthetic-sorbet-7021e2.netlify.app/success/${transactionId}/${card_number_local}`
   );
 };
 
@@ -511,9 +510,7 @@ module.exports.sslpaymentfailInsert = async (req, res) => {
     }
   );
 
-  res.redirect(
-    `https://aesthetic-sorbet-7021e2.netlify.app/fail/${transactionId}`
-  );
+  res.redirect(`https://aesthetic-sorbet-7021e2.netlify.app/fail/${transactionId}`);
   // return res.status(200).json({
   //   data: req.body,
   //   message: 'Payment failed',
