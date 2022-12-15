@@ -12,53 +12,6 @@ const Recharge = db.recharge;
 const Refundtbl = db.refundtbl;
 const sequelize = db.sequelize;
 
-// const demoFunc = async (amount, TranId) => {
-//   const data = {
-//     total_amount: amount,
-//     currency: 'BDT',
-//     tran_id: TranId,
-//     // success_url: `https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-success?transactionId=${TranId}`,
-//     // fail_url: `https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-fail?transactionId=${TranId}`,
-//     // cancel_url: `https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-cancel?transactionId=${TranId}`,
-//     success_url: 'https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-success',
-//     fail_url: 'https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-fail',
-//     cancel_url: 'https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-cancel',
-//     shipping_method: 'No',
-//     product_name: 'device_number.',
-//     product_category: 'Electronic',
-//     product_profile: 'general',
-//     cus_name: 'Customer Name',
-//     cus_email: 'cust@yahoo.com',
-//     cus_add1: 'Dhaka',
-//     cus_add2: 'Dhaka',
-//     cus_city: 'Dhaka',
-//     cus_state: 'Dhaka',
-//     cus_postcode: '1000',
-//     cus_country: 'Bangladesh',
-//     cus_phone: '01711111111',
-//     cus_fax: '01711111111',
-//     multi_card_name: 'mastercard',
-//     value_a: 'ref001_A',
-//     value_b: 'ref002_B',
-//     value_c: 'ref003_C',
-//     value_d: 'ref004_D',
-//     // ipn_url: `https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-notification?transactionId=${TranId}`,
-//     ipn_url: 'https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-notification',
-//   };
-
-//   const sslcommerz = new SSLCommerzPayment(
-//     process.env.STORE_ID,
-//     process.env.STORE_PASSWORD,
-//     false,
-//   ); //true for live default false for sandbox
-//   const result = await sslcommerz.init(data);
-
-//   if (result?.GatewayPageURL) {
-//     return { TranId, GatewayPageURL: result.GatewayPageURL };
-//   } else {
-//     return false;
-//   }
-// };
 var card_number_local = 0;
 module.exports.sslrequestInsert = async (req, res) => {
   // console.log(req.body);
@@ -93,7 +46,8 @@ module.exports.sslrequestInsert = async (req, res) => {
     value_b: "ref002_B",
     // value_c: 'ref003_C',
     value_d: "ref004_D",
-    ipn_url: "https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-notification",
+    ipn_url:
+      "https://payment-doctors-backend-production.up.railway.app/api/v1/sslcommerz/ssl-payment-notification",
   };
   // const sslcommerz = new SSLCommerzPayment(
   //   process.env.STORE_ID,
@@ -510,7 +464,9 @@ module.exports.sslpaymentfailInsert = async (req, res) => {
     }
   );
 
-  res.redirect(`https://aesthetic-sorbet-7021e2.netlify.app/fail/${transactionId}`);
+  res.redirect(
+    `https://aesthetic-sorbet-7021e2.netlify.app/fail/${transactionId}`
+  );
   // return res.status(200).json({
   //   data: req.body,
   //   message: 'Payment failed',
