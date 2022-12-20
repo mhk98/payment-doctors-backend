@@ -243,22 +243,6 @@ module.exports.sslpaymentsuccessInsert = async (req, res) => {
   );
 };
 
-// module.exports.sslsuccessdata = (req, res) => {
-//   const title = req.query.title;
-//   var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
-
-//   Success.findAll({ where: condition })
-//     .then((data) => {
-//       res.send(data);
-//     })
-//     .catch((err) => {
-//       res.status(500).send({
-//         message:
-//           err.message || 'Some error occurred while retrieving tutorials.',
-//       });
-//     });
-// };
-
 // await insertIntoRecharge
 async function insertIntoRecharge(ssl_success) {
   return "";
