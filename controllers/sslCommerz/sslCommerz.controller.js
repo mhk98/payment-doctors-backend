@@ -239,7 +239,7 @@ module.exports.sslpaymentsuccessInsert = async (req, res) => {
   // rechare de construsiton from ssl success
 
   res.redirect(
-    `https://aesthetic-sorbet-7021e2.netlify.app/success/${transactionId}/${card_number_local}`
+    `https://bangabandhutunnel.netlify.app/${transactionId}/${card_number_local}`
   );
 };
 
@@ -448,9 +448,7 @@ module.exports.sslpaymentfailInsert = async (req, res) => {
     }
   );
 
-  res.redirect(
-    `https://aesthetic-sorbet-7021e2.netlify.app/fail/${transactionId}`
-  );
+  res.redirect(`https://bangabandhutunnel.netlify.app/fail/${transactionId}`);
   // return res.status(200).json({
   //   data: req.body,
   //   message: 'Payment failed',
